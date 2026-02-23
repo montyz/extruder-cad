@@ -19,7 +19,7 @@ result = (
     "Cone Packs",       # The text string
     fontsize=5,    # Size of the text
     distance=thickness+1.0,    # Extrusion distance (depth)
-    combine=True  # Do not combine with the base object yet
+    combine=True
 )
     .center(0.0, circle_radius/3)
     .rect(rectangle_width, rectangle_length)
