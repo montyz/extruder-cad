@@ -17,8 +17,8 @@ result = (
     .circle(circle_radius)
     .text(
     "Cone Packs",       # The text string
-    fontsize=5,    # Size of the text
-    distance=thickness+1.0,    # Extrusion distance (depth)
+    fontsize=15,    # Size of the text
+    distance=thickness+0.35,    # Extrusion distance (depth)
     combine=True
 )
     .center(0.0, circle_radius/3)
