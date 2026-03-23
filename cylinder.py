@@ -6,6 +6,7 @@
 
 import cadquery as cq
 from cadquery.func import torus,box, cylinder
+from ocp_vscode import *
 
 #hollow_cyl = cq.Workplane("XY").circle(10).circle(8).extrude(20)
 #result = hollow_cyl.edges(cq.NearestToPointSelector((8,0,20))).chamfer(01.0)
@@ -19,10 +20,9 @@ cylinder_OD = 4.0/2.0*25.4 # Radius of extruded cylinder
 
 t = torus(cylinder_OD-wall_thickness/2.0,wall_thickness/2.0)
 b = box(cylinder_OD,fin_thickness,thickness/2.0)+box(fin_thickness,cylinder_OD,thickness/2.0)
-c = cylinder(cylinder_OD-wall_thickness,thickness)
-    .edges(cq.NearestToPointSelector((cylinder_OD-wall_thickness,0,thickness)))
-    .chamfer(wall_thickness/2.0).translate((0,0,-thickness/2.0))
+# c = cylinder(cylinder_OD-wall_thickness,thickness).edges(">Z").chamfer(4)
+# c = c.translate((0,0,-thickness/2.0))
 d = (cylinder(die_OD,thickness) - cylinder(cylinder_OD,thickness)).translate((0,0,-thickness/2.0))
-result = b-t+c+d
+# result = b-t+c+d
 
-show_object(result)
+show(b-t)
