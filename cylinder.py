@@ -23,4 +23,6 @@ result = b-t+cf+d
 
 result2 = cq.Workplane("XY").cylinder(cylinder_OD-wall_thickness,thickness).edges(">Z").chamfer(4)
 
-show(result2.val()-cf)
+result4 = cq.Workplane("XY").box(cylinder_OD,fin_thickness,thickness/4.0).edges("|X and <Z").chamfer(3, fin_thickness/2.5)
+
+show(result4)
