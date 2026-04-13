@@ -31,6 +31,8 @@ result = ( cq.Workplane("XY")
         .faces(">Z", tag="base").workplane()
         .transformed(offset=(0,0,-0.125*thickness))
         .box(cylinder_radius*2,fin_thickness,thickness/4.0)
+        .faces(">Z", tag="base").workplane()
+        .transformed(offset=(0,0,-0.125*thickness))
         .box(fin_thickness,cylinder_radius*2,thickness/4.0)
 )
 
