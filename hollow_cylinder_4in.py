@@ -31,7 +31,7 @@ result = ( cq.Workplane("XY")
         .faces(">Z", tag="base").workplane()
         .transformed(offset=(0,0,-0.125*thickness))
         .box(cylinder_radius*2,fin_thickness,thickness/4.0)
-        .edges("|X and <Z").chamfer(3, fin_thickness/2.5)
+        .box(fin_thickness,cylinder_radius*2,thickness/4.0)
 )
 
 result4 = cq.Workplane("XY").box(cylinder_radius*2.0,fin_thickness,thickness/4.0).edges("|X and <Z").chamfer(3, fin_thickness/2.5)
