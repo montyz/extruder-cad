@@ -1,9 +1,3 @@
-# /// script
-# dependencies = [
-#   "cadquery",
-# ]
-# ///
-
 import cadquery as cq
 from cadquery.func import torus,box, cylinder, chamfer
 from ocp_vscode import *
@@ -19,10 +13,14 @@ fin_thickness = 1/8*25.4
 cylinder_OD = 4.0/2.0*25.4 # Radius of extruded cylinder
 
 t = torus(cylinder_OD-wall_thickness/2.0,wall_thickness/2.0)
-b = box(cylinder_OD,fin_thickness,thickness/2.0)+box(fin_thickness,cylinder_OD,thickness/2.0)
+b = box(cylinder_OD,fin_thickness,thickness/2.0) \
+    + box(fin_thickness,cylinder_OD,thickness/2.0)
 c = cylinder(cylinder_OD-wall_thickness,thickness).translate((0,0,-thickness/2.0))#.edges(">Z").chamfer(4)
 cf = chamfer(c, c.edges('>Z'), 4)
 d = (cylinder(die_OD,thickness) - cylinder(cylinder_OD,thickness)).translate((0,0,-thickness/2.0))
 result = b-t+cf+d
 
-show(result)
+
+result2 = cq.Workplane("XY").cylinder(cylinder_OD-wall_thickness,thickness).edges(">Z").chamfer(4)
+
+show(result2.val()-cf)
