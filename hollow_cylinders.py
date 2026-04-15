@@ -1,8 +1,5 @@
-from time import sleep
-
 import cadquery as cq
-from cadquery.func import torus,box, cylinder, chamfer
-from ocp_vscode import *
+from ocp_vscode import show
 
 # measurements are in mm, hence the *25.4
 die_radius = 4.2/2.0*25.4 # Radius of the plate
