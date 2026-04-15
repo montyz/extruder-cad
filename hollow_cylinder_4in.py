@@ -71,3 +71,4 @@ part4 = cq.Workplane().circle(die_radius).circle(cylinder_radius).extrude(thickn
 result = part1.union(part2).union(part3).union(part4)
 
 show(result)
+cq.exporters.export(result, "hollow_cylinder_4in.stl")
