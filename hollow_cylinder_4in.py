@@ -65,7 +65,7 @@ part2 = (
         .box(
             cylinder_radius * 2,
             fin_thickness,
-            thickness / 4.0,
+            thickness / 2.0,
             centered=(True, True, False),
         )
         .edges("|X and <Z")
@@ -81,7 +81,7 @@ part3 = (
         .box(
             fin_thickness,
             cylinder_radius * 2,
-            thickness / 4.0,
+            thickness / 2.0,
             centered=(True, True, False),
         )
         .edges("|Y and <Z")
